@@ -796,6 +796,12 @@
 
         .mobile-menu-btn {
           display: block;
+          margin-left: 1rem;
+          flex-shrink: 0;
+        }
+
+        .logo {
+          font-size: 1.2rem;
         }
 
         .about-content,
@@ -1411,6 +1417,7 @@
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
           const href = this.getAttribute("href");
+
           if (href === "#") {
             window.scrollTo({
               top: 0,
@@ -1419,8 +1426,7 @@
           } else {
             const target = document.querySelector(href);
             if (target) {
-              const navHeight = navbar.offsetHeight;
-              const targetPosition = target.offsetTop - navHeight;
+              const targetPosition = target.offsetTop - navbar.offsetHeight;
               window.scrollTo({
                 top: targetPosition,
                 behavior: "smooth",
